@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/game.css">
+    <title>Forget Password</title>
+</head>
+
+<body>
+
+    <!-- header start -->
+    <nav class="navbar bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand mx-auto text-white fs-1" href="#">VoteUP</a>
+        </div>
+    </nav>
+    <!-- header end -->
+
+    <!-- forgetpass start -->
+    <div class="container-fluid mt-5 d-flex justify-content-center align-items-center">
+        <div class="col-md-6">
+            <h2 class="mb-4 text-center">Forgot Password</h2>
+            <form class="bg-light px-5 py-5 rounded" id="forgotPasswordForm">
+                <div class="form-group pt-3">
+                    <!-- <label for="email">Email address</label> -->
+                    <div class="input-group mb-2 mr-sm-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">📧</div>
+                        </div>
+                        <input type="email" class="form-control" id="email" name="email" required placeholder="email">
+                    </div>
+                    <div class="my-4 text-center">
+                        <p id="feedback"></p>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block w-100" id="submit">Reset password</button>
+                    <div class="text-center mt-4">
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="index.html">Create Account</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="login.html">Login</a>
+                            </div>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+    <!-- forgetpass end -->
+
+    <!-- Include Firebase and the JavaScript file -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./js/forgetpass2.js"></script>
+</body>
+
+</html>

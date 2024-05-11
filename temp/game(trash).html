@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/game.css">
+    <title>Game</title>
+</head>
+
+<body>
+
+
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid mx-lg-5 mx-md-3 mx-1">
+            <a class="navbar-brand text-white" id="logo">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="cursor: pointer;">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" id="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" id="users">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" id="game">Game</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" id="point_table">Point table</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            My Account
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="profile">Profile</a></li>
+                            <li><a class="dropdown-item" id="forgetpass">Forget password</a></li>
+                            <li><a class="dropdown-item" id="logout">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar end -->
+
+    <!-- game start -->
+    <div class="container mt-4 text-center">
+        <h2>Whom do you like ?</h2>
+        <p style="font-size: 20px;">click to choose... !</p>
+        <hr class="w-50 mx-auto">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div id="imageContainer" class="pt-lg-2 d-flex justify-content-center align-items-center flex-wrap">
+                </div>
+                <button id="skipButton" class="btn btn-secondary" style="width: 60%; margin-top: 10px;">Skip</button>
+            </div>
+        </div>
+    </div>
+    <!-- game end -->
+
+
+
+</body>
+<!-- Include Firebase script and configuration -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<!-- Include Firebase Authentication script -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<!-- Include your JavaScript file -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="./js/navbar.js"></script>
+<script src="./js/game.js"></script>
+
+</html>

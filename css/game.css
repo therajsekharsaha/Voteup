@@ -1,0 +1,31 @@
+/* * {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#firstImg,
+#lastImg {
+    transition: 0.5s;   
+}
+
+#firstImg:hover,
+#lastImg:hover {
+    transform: scale(1.05, 1.05);
+    transform-origin: center;
+    background-color: rgb(231, 231, 231);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+ */
+
+ #loading {
+    display: none;
+}
+

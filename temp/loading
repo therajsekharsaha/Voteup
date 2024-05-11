@@ -1,0 +1,25 @@
+
+
+<!-- start loading -->
+<div id="loading" style="display:none; position: absolute; top:50%; left: 50%; transform: translate(-50%,-50%); z-index: 1;" class="text-center">
+    <p>Loading...</p>
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+<!-- start loading -->
+
+// Define a function to show the loading element.
+function showLoading() {
+    var loadingElement = document.getElementById("loading");
+    loadingElement.style.display = "block";
+}
+
+// Define a function to hide the loading element.
+function hideLoading() {
+    var loadingElement = document.getElementById("loading");
+    loadingElement.style.display = "none";
+}
+
+showLoading(); // Show loading element
+hideLoading(); // Hide loading element

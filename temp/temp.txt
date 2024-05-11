@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Profile Images</title>
+    <!-- Include Firebase script and configuration -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <!-- Initialize Firebase with your project configuration -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDc0LPuRl1K6W6rBeZU_kOVsiPGDof4Gkg",
+            authDomain: "best-8c0e6.firebaseapp.com",
+            projectId: "best-8c0e6",
+            storageBucket: "best-8c0e6.appspot.com",
+            messagingSenderId: "765419235049",
+            appId: "1:765419235049:web:00e0863554e4d85f60f278",
+            measurementId: "G-TKRDTR487L"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        function displayUserImages() {
+            var database = firebase.database();
+            var usersRef = database.ref("users");
+
+            var imageContainer = document.getElementById("imageContainer");
+
+            // ...
+            usersRef.once("value")
+                .then(function (snapshot) {
+                    snapshot.forEach(function (childSnapshot) {
+                        var user = childSnapshot.val();
+                        var profileImageUrl = user.profilePhotoURL; // Use the correct property name
+                        var username = user.username;
+
+                        // Create a container for each user
+                        var userContainer = document.createElement("div");
+
+                        // Create image element
+                        var img = document.createElement("img");
+                        img.src = profileImageUrl;
+
+                        // img.alt = username; // Use the username as alt text
+                        userContainer.appendChild(img);
+
+                        // Create username element
+                        var usernameElement = document.createElement("p");
+                        usernameElement.textContent = username;
+                        userContainer.appendChild(usernameElement);
+
+                        // Add user container to the main container
+                        imageContainer.appendChild(userContainer);
+                    });
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            // ...
+
+        }
+
+        // Call the function when the page loads
+        window.onload = displayUserImages;
+    </script>
+</head>
+
+<body>
+    <div id="imageContainer"></div>
+</body>
+
+</html>
+
+
+
+
+================================================================
+
+
+function displayUserImages() {
+    var database = firebase.database();
+    var usersRef = database.ref("users");
+
+    var imageContainer = document.getElementById("imageContainer");
+
+    usersRef.once("value")
+        .then(function (snapshot) {
+            var rowDiv = document.createElement("div");
+            rowDiv.className = "row";
+
+            snapshot.forEach(function (childSnapshot, index) {
+                if (index % 4 === 0) {
+                    imageContainer.appendChild(rowDiv);
+                    rowDiv = document.createElement("div");
+                    rowDiv.className = "row";
+                }
+
+                var user = childSnapshot.val();
+                var profileImageUrl = user.profilePhotoURL; // Use the correct property name
+                var username = user.username;
+
+                // Create a Bootstrap card
+                var card = document.createElement("div");
+                card.className = "col-md-3 mb-4";
+
+                var cardInner = document.createElement("div");
+                cardInner.className = "card";
+
+                // Create image element
+                var img = document.createElement("img");
+                img.src = profileImageUrl;
+                img.className = "card-img-top";
+
+                cardInner.appendChild(img);
+
+                // Create card body
+                var cardBody = document.createElement("div");
+                cardBody.className = "card-body";
+
+                // Create username element
+                var usernameElement = document.createElement("p");
+                usernameElement.className = "card-text";
+                usernameElement.textContent = username;
+                cardBody.appendChild(usernameElement);
+
+                cardInner.appendChild(cardBody);
+                card.appendChild(cardInner);
+                rowDiv.appendChild(card);
+            });
+
+            imageContainer.appendChild(rowDiv);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+// Call the function when the page loads
+window.onload = displayUserImages;
+
+============================================
+
+<!-- <h1>Complete Your Profile</h1>
+    <form id="profileSetupForm">
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" required>
+
+        <label for="photoAddress">Photo Address:</label>
+        <input type="text" id="photoAddress" name="photoAddress" required>
+
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" required></textarea>
+
+        <label for="dateOfBirth">Date of Birth:</label>
+        <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+
+        <label for="interestedTopics">Interested Topics:</label>
+        <input type="text" id="interestedTopics" name="interestedTopics" required>
+
+        <button type="submit">Save Profile</button>
+    </form> -->
